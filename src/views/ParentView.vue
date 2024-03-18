@@ -1,7 +1,6 @@
 <template>
     <div>
-        <h2>This is Parent Component</h2>
-        <ChildComponent/>
+        <ChildComponent :childname="parentname" :clickFunction="alertFunction"/>
     </div>
 </template>
 
@@ -14,6 +13,18 @@ export default {
     name:'ParentComponent',
     components:{
         ChildComponent
+    }, 
+    data(){
+        return{
+            parentname:"Write Code With Vue Js"
+        }
+    },
+    methods:
+    {
+        alertFunction()
+        {
+            alert("this is alert");
+        }
     }
 }
 
